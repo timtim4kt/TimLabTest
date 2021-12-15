@@ -33,10 +33,9 @@ public class PassengerAirplane extends Airplane  {
 
             if(a instanceof PassengerAirplane)
             {
-                for(name n: passengerList)
-                {
+
                     if()
-                }
+
                 passengerList.add(passengerName);
             }
             else {

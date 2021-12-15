@@ -3,11 +3,13 @@ package dkit.oop;
 import java.util.ArrayList;
 import java.util.List;
 
+import static dkit.oop.AirplaneManager.airplaneList;
+
 public class PassengerAirplane extends Airplane  {
 
     // fields(Q2)
     private int MAX_NUM_PASSENGERS;
-    private final ArrayList<String> passengerList;
+    private static ArrayList<String> passengerList;
 
 
     PassengerAirplane(String type, int maxNumPassengers) {
@@ -25,7 +27,7 @@ public class PassengerAirplane extends Airplane  {
          passengerList.add(name);
     }
 
-    public Boolean addPassengerNameToAirplane(int airplaneId,String passengerName)
+    public static Boolean addPassengerNameToAirplane(int airplaneId,String passengerName)
     {
         boolean action = false;
         Airplane a = AirplaneManager.findAirPlaneById(airplaneId);
@@ -43,7 +45,12 @@ public class PassengerAirplane extends Airplane  {
         return action;
     }
 
-    public
+    /*public Airplane findByPassengerName(String passengerName)
+    {
+        for(Airplane a: airplaneList){
+            if(passengerName.equalsIgnoreCase(passengerList);
+        }
+    }*/
 
 
 

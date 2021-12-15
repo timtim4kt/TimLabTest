@@ -1,5 +1,6 @@
 package dkit.oop;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -44,6 +45,27 @@ public class App
         mgr.add(cargoPlane2);
         mgr.add(passengerPlane1);
         mgr.add(passengerPlane2);
+
+        System.out.println("3iii: 'Display All Airplanes'");
+        AirplaneManager.displayAllAirplanes();
+        System.out.println("3iv: 'Display All Passenger Airplanes'");
+        AirplaneManager.displayAllPassengerAirplanes();
+        System.out.println("3v: 'Get and print all cargo airplanes'");
+        ArrayList<Airplane> cargo = AirplaneManager.getAllCargoAirplanes();
+        System.out.println(cargo.toString());
+        PassengerAirplane.addPassengerNameToAirplane(passengerPlane1.getId(), "sarah");
+        System.out.println("3vii");
+        if(AirplaneManager.containsAirPlane(passengerPlane2) == false)
+        {
+            System.out.println("Cant find airplane");
+        }
+        else
+        {
+            System.out.println("Airplane found");
+        }
+        System.out.println("3ix");
+        AirplaneManager.displayAllAirplanesInOrderOfType();
+
 
         //Question 4
         // Uncomment all the code below and implement the two methods

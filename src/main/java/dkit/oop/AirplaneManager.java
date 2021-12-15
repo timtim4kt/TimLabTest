@@ -2,6 +2,7 @@ package dkit.oop;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -40,12 +41,12 @@ public void add(Airplane airplane)
     airplaneList.add(airplane);
 }
 
-    public void displayAllAirplanes() {
+    public static void displayAllAirplanes() {
         for (Airplane a : airplaneList)
             System.out.println(a.toString());
     }
 
-    public void displayAllPassengerAirplanes() {
+    public static void displayAllPassengerAirplanes() {
         for (Airplane a : airplaneList)
         {
             if(a instanceof PassengerAirplane)
@@ -57,7 +58,7 @@ public void add(Airplane airplane)
     }
 
     //  write method getAllCargoAirplanes()
-    public ArrayList<Airplane> getAllCargoAirplanes() {
+    public static ArrayList<Airplane> getAllCargoAirplanes() {
         ArrayList allCargoAirplanes = new ArrayList();
         for (Airplane a : airplaneList)
         {
@@ -88,9 +89,25 @@ public void add(Airplane airplane)
     }
 
     // write findAirplaneByPassengerName( passengerName )
-
+    /*attempt in PassengerAirplane.Java*/
 
     // write displayAllAirplanesInOrderOfType( argument )
+    public static void  displayAllAirplanesInOrderOfType()
+    {
+        ArrayList<Airplane> list = new ArrayList<>();
+        for (Airplane a : airplaneList)
+        {
+            list.add(a);
+        }
+
+        typeCompararator tComparator = new typeCompararator();
+        Collections.sort(list, tComparator);
+
+        for(Airplane a : list)
+        {
+            System.out.println(a.toString());
+        }
+    }
 
 
 

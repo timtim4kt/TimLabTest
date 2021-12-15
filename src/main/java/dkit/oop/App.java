@@ -18,25 +18,32 @@ public class App
         System.out.println("OOP - CA2 - 20% - December 2021 - AirplaneManager");
 
         //Q2
-        // CargoAirplane cargoPlane1 = new CargoAirplane("Douglas DC-4",20000);
-        // CargoAirplane cargoPlane2 = new CargoAirplane("Boeing C-7000",25000);
+         CargoAirplane cargoPlane1 = new CargoAirplane("Douglas DC-4",20000);
+         CargoAirplane cargoPlane2 = new CargoAirplane("Boeing C-7000",25000);
 
         // display the two objects
+
+        System.out.println("Cargo plane 1 = " + cargoPlane1.toString() + "\n" + "Cargo plane 2 = " + cargoPlane2.toString());
 
         AirplaneManager mgr = new AirplaneManager();
 
         //Q2
-//         PassengerAirplane passengerPlane1 = new PassengerAirplane("Boeing 747",524);
-//         PassengerAirplane passengerPlane2 = new PassengerAirplane("Airbus 380",525);
+         PassengerAirplane passengerPlane1 = new PassengerAirplane("Boeing 747",524);
+         PassengerAirplane passengerPlane2 = new PassengerAirplane("Airbus 380",525);
 //         //Add passengers to Passenger planes
-//         passengerPlane1.addPassenger("Tom Hardy");
-//         passengerPlane1.addPassenger("Margot Robbie");
-//         passengerPlane2.addPassenger("Emma Thompson");
+         passengerPlane1.addPassenger("Tom Hardy");
+         passengerPlane1.addPassenger("Margot Robbie");
+         passengerPlane2.addPassenger("Emma Thompson");
+
+        System.out.println("Passenger plane 1 =" + passengerPlane1.toString() + "\n" + "Passenger plane 2 =" + passengerPlane2.toString());
 
         //Q3
 
         // write calls to methods implemented for Q3.
-
+        mgr.add(cargoPlane1);
+        mgr.add(cargoPlane2);
+        mgr.add(passengerPlane1);
+        mgr.add(passengerPlane2);
 
         //Question 4
         // Uncomment all the code below and implement the two methods

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class AirplaneManager {
 
-    ArrayList<Airplane> airplaneList;
+    static ArrayList<Airplane> airplaneList;
 
     public AirplaneManager() {
         airplaneList = new ArrayList<>();
@@ -24,20 +24,43 @@ public class AirplaneManager {
     //Q3.
 
     // write add() method
-
+public void add(Airplane airplane)
+{
+    airplaneList.add(airplane);
+}
 
     public void displayAllAirplanes() {
-        // add code
+        for (Airplane a : airplaneList)
+            System.out.println(a.toString());
     }
 
     public void displayAllPassengerAirplanes() {
-        // add code
+        for (Airplane a : airplaneList)
+        {
+            if(a instanceof PassengerAirplane)
+            {
+                System.out.println(a.toString());
+            }
+        }
+
     }
 
     //  write method getAllCargoAirplanes()
+    public ArrayList<Airplane> getAllCargoAirplanes() {
+        ArrayList allCargoAirplanes = new ArrayList();
+        for (Airplane a : airplaneList)
+        {
+            if(!(a instanceof PassengerAirplane))
+            {
+                allCargoAirplanes.add(a);
+            }
+        }
 
+        return allCargoAirplanes;
+    }
 
     // write  addPassengerNameToAirplane( airplaneId, passengerName)
+
 
 
     // write containsAirplane( Airplane plane )
@@ -47,6 +70,17 @@ public class AirplaneManager {
 
     // write displayAllAirplanesInOrderOfType( argument )
 
+
+    public static Airplane findAirPlaneById(int id)
+    {
+        for(Airplane a : airplaneList){
+            if(a.getId() == id)
+            {
+                return a;
+            }
+        }
+        return null;
+    }
 
 } // end of AirplaneManager
 

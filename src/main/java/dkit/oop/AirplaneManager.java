@@ -23,6 +23,17 @@ public class AirplaneManager {
 
     //Q3.
 
+    public static Airplane findAirPlaneById(int id)
+    {
+        for(Airplane a : airplaneList){
+            if(a.getId() == id)
+            {
+                return a;
+            }
+        }
+        return null;
+    }
+
     // write add() method
 public void add(Airplane airplane)
 {
@@ -60,27 +71,30 @@ public void add(Airplane airplane)
     }
 
     // write  addPassengerNameToAirplane( airplaneId, passengerName)
-
-
+    /*Answer is in PassengerAirplane.Java*/
 
     // write containsAirplane( Airplane plane )
-
+    public static Boolean containsAirPlane(Airplane airplane)
+    {
+        boolean exists = false;
+        for(Airplane a : airplaneList)
+        {
+            if(a.equals(airplane))
+            {
+                exists = true;
+            }
+        }
+        return exists;
+    }
 
     // write findAirplaneByPassengerName( passengerName )
+
 
     // write displayAllAirplanesInOrderOfType( argument )
 
 
-    public static Airplane findAirPlaneById(int id)
-    {
-        for(Airplane a : airplaneList){
-            if(a.getId() == id)
-            {
-                return a;
-            }
-        }
-        return null;
-    }
+
+
 
 } // end of AirplaneManager
 

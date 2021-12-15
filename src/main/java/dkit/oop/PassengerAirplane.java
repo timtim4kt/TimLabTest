@@ -25,27 +25,25 @@ public class PassengerAirplane extends Airplane  {
          passengerList.add(name);
     }
 
-    public void addPassengerNameToAirplane(int airplaneId,String passengerName)
+    public Boolean addPassengerNameToAirplane(int airplaneId,String passengerName)
     {
+        boolean action = false;
         Airplane a = AirplaneManager.findAirPlaneById(airplaneId);
-        if(a!=null)
+        if(AirplaneManager.containsAirPlane(a) == true)
         {
 
             if(a instanceof PassengerAirplane)
             {
-
-                    if()
-
                 passengerList.add(passengerName);
+                action = true;
             }
-            else {
-                System.out.println("Cannot add passengers to a cargo plane");
-            }
+
         }
-        else {
-            System.out.println("Airplane of this id doesnt exist");
-        }
+
+        return action;
     }
+
+    public
 
 
 
